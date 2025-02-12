@@ -16,6 +16,9 @@ public class QuickSort {
     public QuickSort(int n) {
         this.array = new int[n];
     }
+    public int[] getArray() {
+       return array;
+}
     public void addValue() {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
@@ -39,19 +42,24 @@ public class QuickSort {
         }
     }
     private int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = (low - 1);
-        for (int j = low; j < high; j++) {
-            if (arr[j] <= pivot) {
+ int i = low;
+        int j = high;
+        int pv = arr[(i + j) / 2];
+        while (i <= j) {
+            while (arr[i] < pv) {
                 i++;
+            }
+            while (arr[j] > pv) {
+                j--;
+            }
+            if (i <= j) {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
+                i++;
+                j--;
             }
         }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-        return i + 1;
+        return i;
 }
 }

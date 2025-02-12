@@ -22,7 +22,8 @@ public class Test {
             System.out.println("1. Bubble Sort");
             System.out.println("2. Stacks");
             System.out.println("3. Quick Sort");
-            System.out.println("4. Exit");
+            System.out.println("4. Binary Search");
+            System.out.println("5. Exit");
             System.out.println("Please in put your choice:");
             choice = sc.nextInt();
             switch (choice) {
@@ -83,8 +84,27 @@ public class Test {
                     System.out.println("Array after sort");
                     qSort.displayArray();
                     break;
-}
+                case 4:
+                    size = checkNumber();
+                    QuickSort bSort = new QuickSort(size);
+                    bSort.addValue();
+                    bSort.sort();
+                    System.out.println("Array after sort");
+                    bSort.displayArray();
+                    System.out.println("Input value you want to search:");
+                    int check = sc.nextInt();
+                    FindBinary bSearch = new FindBinary(size);
+                    bSearch.a = bSort.getArray();
+                    int index = bSearch.search(check);
 
-        } while (choice != 4);
+                    if (index != -1) {
+                        System.out.println("Value found at index: " + index);
+                    } else {
+                        System.out.println("Value not found.");
+                    }
+
+            }
+
+        } while (choice != 5);
     }
 }
