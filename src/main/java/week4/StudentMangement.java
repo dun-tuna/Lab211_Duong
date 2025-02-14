@@ -21,15 +21,11 @@ public class StudentMangement {
     private List<Student> studentList = new ArrayList<>();
 
     private boolean checkStudent(Student st) {
-        if (studentList == st) {
-            return true;
-        } else {
-            return false;
-        }
+          return studentList.contains(st);
     }
 
     public boolean addStudent(Student st) {
-        if (checkStudent(st)) {
+        if (!checkStudent(st)) {
             studentList.add(st);
             return true;
         }
