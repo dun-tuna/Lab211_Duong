@@ -15,7 +15,11 @@ public class Test {
     public static void main(String args[]) {
         StudentMangement stMana = new StudentMangement();
         Scanner scanner = new Scanner(System.in);
-                while (true) {
+        System.out.println("\n===== MANAGEMENT MENU =====");
+        System.out.println("1. STUDENT MANAGEMENT MENU");
+        System.out.println("2. STUDENT, TEACHER AND PERSON MANAGEMENT MENU");
+        System.out.println("3. EXIT");
+        while (true) {
             System.out.println("\n===== STUDENT MANAGEMENT MENU =====");
             System.out.println("1. Add Student");
             System.out.println("2. Display Students");
@@ -94,5 +98,5 @@ public class Test {
             }
         }
     }
-  }
+}
 
